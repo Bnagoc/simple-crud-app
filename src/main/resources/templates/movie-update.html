@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Movie updating</title>
+    <title>Update movie</title>
 </head>
 <body>
-
+<form action="#" th:action="@{/movie-update}" th:object="${movie}" method="post">
+    <label for="id">ID</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="type movie ID here">
+    <br/>
+    <label for="movieName">Movie</label>
+    <input type="text" th:field="*{movieName}" id="movieName" placeholder="type new movie title here">
+    <br/>
+    <label for="movieName">Producer</label>
+    <input type="text" th:field="*{producerName}" id="producerName" placeholder="type new producer name here">
+    <br/>
+    <input type="submit" value="Add Movie">
+</form>
 </body>
 </html>

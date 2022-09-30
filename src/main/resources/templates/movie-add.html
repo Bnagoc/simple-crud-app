@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Movie adding</title>
+    <title>Add your movie!</title>
 </head>
 <body>
-
+<form action="#" th:action="@{/movie-add}" th:object="${movie}" method="post">
+    <label for="movieName">Movie</label>
+    <input type="text" th:field="*{movieName}" id="movieName" placeholder="type movie title here">
+    <label for="movieName">Producer</label>
+    <input type="text" th:field="*{producerName}" id="producerName" placeholder="type producer name here">
+    <input type="submit" value="Add Movie">
+</form>
 </body>
 </html>
